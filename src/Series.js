@@ -2,11 +2,11 @@ import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
 
-const Generos = () => {
+const Series = () => {
   const [data, setData] = useState([])
   useEffect(() => {
     axios
-    .get('./api/genres')
+    .get('./api/series')
     .then(res => {
     setData(res.data.data)
     })
@@ -51,8 +51,8 @@ const Generos = () => {
     
     return (
       <div className = 'container'>
-        <h1>Gêneros</h1>
-        
+        <h1>Séries</h1>
+        <div><Link to='/generos/novo' className='btn btn-info mb-2'>Nova Série</Link></div>
         <table className='table table-dark'>
           <thead>
             <tr>
@@ -65,9 +65,8 @@ const Generos = () => {
             {data.map(renderizaLinha)}  
           </tbody>
         </table>
-        <Link to='/generos/novo' className='btn btn-info mb-2'>Novo Gênero</Link>
-      </div>
+        </div>
     )
 }
 
-export default Generos
+export default Series

@@ -12,9 +12,9 @@ const Series = () => {
     })
   },[])
 
-  const deleteGenero = id => {
+  const deleteSerie = id => {
     axios
-      .delete('/api/genres/' + id)
+      .delete('/api/series/' + id)
       .then(res => {
         const filtrado = data.filter(item => item.id !== id)
         setData(filtrado)  
@@ -29,8 +29,8 @@ const Series = () => {
           <th scope='row'>{record.id}</th>
           <td>{record.name}</td>
           <td>
-            <Link to = {'/generos/' + record.id} className = 'btn btn-warning'>Editar</Link>
-            <button className = 'btn btn-danger' onClick = {() => deleteGenero(record.id)}>Remover</button>
+            <Link to = {'/series/' + record.id} className = 'btn btn-warning'>Editar</Link>
+            <button className = 'btn btn-danger' onClick = {() => deleteSerie(record.id)}>Remover</button>
           </td>
           </tr>
       )
@@ -39,11 +39,11 @@ const Series = () => {
     if (data.length === 0) {
       return(
         <div className = 'container'>
-          <h1>Gêneros</h1>
-          <div class="alert alert-warning" role="alert">
-            você não possui gêneros cadastrados.
+          <h1>Séries</h1>
+          <div class="alert alert-info" role="alert">
+            você não possui séries criadas.
           </div>
-          <Link to='/generos/novo' className='btn btn-info mb-2'>Novo Gênero</Link>
+          <Link to='/series/novo' className='btn btn-info mb-2'>Nova Série</Link>
          </div>
       )
     }
@@ -52,7 +52,7 @@ const Series = () => {
     return (
       <div className = 'container'>
         <h1>Séries</h1>
-        <div><Link to='/generos/novo' className='btn btn-info mb-2'>Nova Série</Link></div>
+        <div><Link to='/series/novo' className='btn btn-info'>Nova Série</Link></div>
         <table className='table table-dark'>
           <thead>
             <tr>

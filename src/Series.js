@@ -29,10 +29,10 @@ const Series = () => {
           <th scope='row'>{record.id}</th>
           <td>{record.name}</td>
           <td>
-            <Link to = {'/series/' + record.id} className = 'btn btn-warning'>Editar</Link>
-            <button className = 'btn btn-danger' onClick = {() => deleteSerie(record.id)}>Remover</button>
+            <Link to = {'/series/' + record.id} className = 'btn btn-warning mb-2'> Info </Link>
+            <button className = 'btn btn-danger mb-2' onClick = {() => deleteSerie(record.id)}> Remover </button>
           </td>
-          </tr>
+        </tr>
       )
     }
 

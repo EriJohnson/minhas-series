@@ -16,11 +16,8 @@
   "scripts": {
     "start": "npm-run-all build start-server",
     "start-react": "react-scripts start",
-<<<<<<< HEAD
     "start-server": "node ./node_modules/minhas-series-server/index.js",
-=======
     "start-server": "node .node_modules/minhas-series-server/index.js",
->>>>>>> 3e533df389101286ace4a1e14e7d41e665163836
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"

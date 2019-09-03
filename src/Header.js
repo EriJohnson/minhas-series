@@ -9,7 +9,7 @@ const Header = () => {
       setOpen(!open)
     }
     return (
-      <Navbar color ='light'  light expand ='md'>
+      <Navbar color ='dark'  light expand ='md'>
         <div className = 'container'>
         <NavbarBrand tag = {Link} to = '/'>Minhas Séries</NavbarBrand>
         <NavbarToggler onClick = {toggle} />
